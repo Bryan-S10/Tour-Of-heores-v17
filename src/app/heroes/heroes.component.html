@@ -1,0 +1,63 @@
+<h2>THE HEROEEEEEEEEES</h2>
+
+<ul class="heroes">
+
+ @for (hero of heroes; track hero.id) {
+<li [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+<span class="badge">{{hero.id}}</span> {{hero.name}}
+</li>
+} @empty {
+  <li>No heroes found</li>
+}
+</ul>
+
+<ul>
+@if (selectedHero){
+<li>
+<h2>{{selectedHero.name}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name"/> <br>
+    </label>
+    <img src="{{selectedHero.image}}" alt="Hero's image" class="heroes-image" height="100px"> <br>
+  </div>
+</li>
+}
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------------------------------------------------- -->
+
+<!-- @if (selectedHero) { -->
+  <!-- <li >
+  @for (hero of heroes; track hero.name) {
+    <ul class="heroes">
+     <div>
+        <span class="badge">
+
+          <img src="{{hero.image}}" alt="Hero's image" class="heroes-image" height="100px"> <br>
+          -
+          <button  (click)="onSelect(hero)"><h2>{{hero.id}} - {{hero.name.toUpperCase()}}</h2></button>
+        </span>
+      </div>
+    </ul>
+  }
+</li> -->
+
+<!-- <input [(ngModel)]="selectedHero.name" type="text" placeholder="name"> -->
+<!-- } -->
+
+
+
+
+
