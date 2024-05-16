@@ -1,0 +1,18 @@
+
+
+
+<ul>
+  @if (hero){
+  <li>
+  <h2>{{hero.name}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="hero.name" placeholder="name"/> <br>
+      </label>
+      <img src="{{hero.image}}" alt="Hero's image" class="heroes-image" height="100px"> <br>
+    </div>
+  </li>
+  }
+</ul>
+
