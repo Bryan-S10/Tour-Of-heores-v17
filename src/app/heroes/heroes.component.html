@@ -1,17 +1,18 @@
-<h2>THE HEROEEEEEEEEES  DOS</h2>
+<h2>THE HEROES</h2>
 
 <ul class="heroes">
 
  @for (hero of heroes; track hero.id) {
-<li [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
-<span class="badge">{{hero.id}}</span> {{hero.name}}
-</li>
+<a href="/detail/{{hero.id}}">
+<span >{{hero.id}} - {{hero.name}} <br></span>
+
+</a>
 } @empty {
   <li>No heroes found</li>
 }
 </ul>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>    <!--pasa el hero a hero-details -->
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail>    pasa el hero a hero-details -->
 
 
 <!-- <ul>

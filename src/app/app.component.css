@@ -1,27 +1,42 @@
-/* Application-wide Styles */
+/* AppComponent's private CSS styles */
 h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+  font-size: 1.2em;
+  margin-bottom: 0;
 }
-h2, h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
+h2 {
+  font-size: 2em;
+  margin-top: 0;
+  padding-top: 0;
 }
-body {
-  margin: 2em;
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
 }
-body, input[type="text"], button {
-  color: #333;
-  font-family: Cambria, Georgia;
+nav a:visited, a:link {
+  color: #334953;
 }
-/* everywhere else */
-* {
-  font-family: Arial, Helvetica, sans-serif;
+nav a:hover {
+  color: #039be5;
+  background-color: #cfd8dc;
 }
-
-heroes-images{
-  height: 20px;
-  width: 20px;
+nav a.active {
+  color: #039be5;
 }
+DashboardComponent
+src/app/dashboard/dashboard.component.html
+src/app/dashboard/dashboard.component.ts
+src/app/dashboard/dashboard.component.css
+content_copy
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let hero of heroes" class="col-1-4"
+      routerLink="/detail/{{hero.id}}">
+    <div class="module hero">
+      <h4>{{hero.name}}</h4>
+    </div>
+  </a>
+</div>
